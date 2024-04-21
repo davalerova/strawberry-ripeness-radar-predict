@@ -16,7 +16,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Copiar el resto del código fuente del proyecto al directorio de trabajo
-COPY ./app /code/app
+COPY . /code/
 
 # Comando para ejecutar la aplicación usando Uvicorn
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
